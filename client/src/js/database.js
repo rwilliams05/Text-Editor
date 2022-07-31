@@ -38,7 +38,7 @@ export const putDb = async (content) => {
 
 
 // Export a function we will use to GET all from the database.
-export const getDb = async () => console.error('getDb not implemented');
+//export const getDb = async () => console.error('getDb not implemented');
 
 export const getAllDb = async () => {
   console.log('GET all from the database');
@@ -47,7 +47,7 @@ export const getAllDb = async () => {
   const jateDb = await openDB('jate', 1);
 
   // Create a new transaction and specify the database and data privileges.
-  const tx = jateDb.transaction('jate', 'readwrite');
+  const tx = jateDb.transaction('jate', 'readonly');
 
   // Open up the desired object store.
   const store = tx.objectStore('jate');
@@ -57,7 +57,7 @@ export const getAllDb = async () => {
 
    // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
+  console.log('data saved', result);
   return result;
 };
 
