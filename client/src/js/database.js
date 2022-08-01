@@ -40,7 +40,7 @@ export const putDb = async (content) => {
 // Export a function we will use to GET all from the database.
 //export const getDb = async () => console.error('getDb not implemented');
 
-export const getAllDb = async () => {
+export const getDb = async () => {
   console.log('GET all from the database');
 
   // Create a connection to the database database and version we want to use.
